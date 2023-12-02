@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Application Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Medical.css') }}">
+    
+
+</head>
+<body>
+    <section class="container">
+        <header>Individual Medical Form</header>
+        <div class="success-message">
+            {% if success_message %}
+                <p>{{ success_message }}</p>
+            {% endif %}
+        </div>
+        <form action="/" class="form" method="post">
+            <div class="input-box">
+                <label>Last Name</label>
+                <input type="text" name="lastname" placeholder="e.g. Cruz, Elopre, etc"/>
+            </div>
+
+            <div class="input-box">
+                <label>First Name</label>
+                <input type="text" name="firstname" placeholder="e.g. Sam, Melvin, etc" required/>
+            </div>
+
+            <div class="input-box">
+                <label>Middle Name</label>
+                <input type="text" name="middlename" placeholder="e.g. Eduria, Castro, etc" required/>
+            </div>
+
+            <div class="column">
+                <div class="input-box">
+                    <label>MedicalID</label>
+                    <input type="text" name="medicalID" placeholder="e.g. MD-00000" required/>
+                </div>
+
+                <div class="input-box">
+                    <label>Sex</label>
+                    <select id="Sex" name="sex" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                </div>
+            </div>
+            
+            <div class="input-box">
+                <label>Birth Date</label>
+                <input type="date" name="birthdate" placeholder="Enter Birth Date" required/>
+            </div>
+
+            <div class="input-box">
+                <label>Medical Condition</label>
+                <input type="text" name="medicalCondition" placeholder="e.g. Hypertension, Asthma, etc" required/>
+            </div>
+
+            <div class="column1">
+                <div class="input-box">
+                    <label>COVID Vaccinated</label>
+                    <select id="COVID Vaccinated" name="covidVaccinated" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                </div>
+
+                <div class="input-box">
+                    <label>BMI Classification</label>
+                    <select id="BMI Classification" name="bmiClassification" required>
+                        <option value="normal">Normal</option>
+                        <option value="underweight">Underweight</option>
+                        <option value="overweight">Overweight</option>
+                        <option value="obese">Obese</option>
+                      </select>
+                </div>
+            </div>
+
+            <div class="column2">
+                <div class="input-box">
+                    <label>Maintenance Medicine</label>
+                    <select id="Maintenance Medicine" name="maintenanceMedicine" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                </div>
+
+                <div class="input-box">
+                    <label>Physical Fitness</label>
+                    <select id="Physical Fitness" name="physicalFitness" required>
+                        <option value="PF">Physically Fit</option>
+                        <option value="NPF">Not Physically Fit</option>
+                      </select>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+           
+
+        </form>
+    </section>
+
+</body>
+</html>
